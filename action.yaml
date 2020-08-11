@@ -1,0 +1,5 @@
+# action.yml
+name: 'Swift for Tensorflow Action'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
