@@ -1,12 +1,8 @@
 FROM gcr.io/swift-tensorflow/base-deps-cuda10.2-cudnn7-ubuntu18.04
 
-RUN apt-get update && apt-get install -y \
-    libncurses5-dev python-pip && \
-    rm -r /var/lib/apt/lists/* && \
-    pip install numpy
-
 # Install HDF5
-RUN apt-get install -y libhdf5-dev
+# Necessary to find it in for HDF5Kit dependency
+RUN apt update && apt install -y libhdf5-dev
 
 # Install Swift Ubuntu Snapshot
 RUN SWIFT_ARCHIVE_NAME=swift-tensorflow-RELEASE-0.10-cuda10.2-cudnn7-ubuntu18.04.tar.gz && \
