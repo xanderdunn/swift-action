@@ -5,6 +5,9 @@ RUN apt-get update && apt-get install -y \
     rm -r /var/lib/apt/lists/* && \
     pip install numpy
 
+# Install HDF5
+RUN apt-get install -y libhdf5-dev
+
 # Install Swift Ubuntu Snapshot
 RUN SWIFT_ARCHIVE_NAME=swift-tensorflow-RELEASE-0.10-cuda10.2-cudnn7-ubuntu18.04.tar.gz && \
     SWIFT_URL=https://storage.googleapis.com/swift-tensorflow-artifacts/releases/v0.10/rc1/$SWIFT_ARCHIVE_NAME && \
