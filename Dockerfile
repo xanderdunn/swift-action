@@ -1,11 +1,11 @@
 FROM gcr.io/swift-tensorflow/base-deps-cuda10.2-cudnn7-ubuntu18.04
 
-RUN sudo apt update
-RUN sudo apt install -y -V ca-certificates lsb-release wget
+RUN apt update
+RUN apt install -y -V ca-certificates lsb-release wget
 RUN wget https://apache.bintray.com/arrow/$(lsb_release --id --short | tr 'A-Z' 'a-z')/apache-arrow-archive-keyring-latest-$(lsb_release --codename --short).deb
-RUN sudo apt install -y -V ./apache-arrow-archive-keyring-latest-$(lsb_release --codename --short).deb
-RUN sudo apt update
-RUN sudo apt install -y -V libarrow-glib-dev
+RUN apt install -y -V ./apache-arrow-archive-keyring-latest-$(lsb_release --codename --short).deb
+RUN apt update
+RUN apt install -y -V libarrow-glib-dev
 
 
 # Install Swift Ubuntu Snapshot
