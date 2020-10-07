@@ -7,7 +7,6 @@ RUN apt install -y -V ./apache-arrow-archive-keyring-latest-$(lsb_release --code
 RUN apt update
 RUN apt install -y -V libarrow-glib-dev
 
-
 # Install Swift Ubuntu Snapshot
 RUN SWIFT_ARCHIVE_NAME=swift-tensorflow-RELEASE-0.10-cuda10.2-cudnn7-ubuntu18.04.tar.gz && \
     SWIFT_URL=https://storage.googleapis.com/swift-tensorflow-artifacts/releases/v0.10/rc1/$SWIFT_ARCHIVE_NAME && \
